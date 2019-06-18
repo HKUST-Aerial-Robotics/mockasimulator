@@ -1,0 +1,12 @@
+<package format="2">
+  <name>sparse_graph</name>
+  <description>sparse_graph</description>
+  <version>0.1.0</version>
+  <maintainer email="eeshaojie@ust.hk">Shaojie Shen</maintainer>
+  <maintainer email="wwuar@connect.ust.hk">william.wu</maintainer>
+  <license>LGPLv3</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_export_depend>roscpp</build_export_depend>
+
+</package>
