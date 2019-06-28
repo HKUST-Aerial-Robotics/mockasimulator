@@ -521,14 +521,13 @@ odom_callback(const nav_msgs::Odometry::ConstPtr& msg)
     std::string selfstr = string("/drone") + std::to_string(::count);
 
     broadcaster->sendTransform(tf::StampedTransform(
-      transform, msg->header.stamp,
-      string("/local_map_") + std::to_string(::count), selfstr));
-    broadcaster->sendTransform(tf::StampedTransform(
-      transform45, msg->header.stamp, selfstr, string("/laser")));
-    broadcaster->sendTransform(tf::StampedTransform(
-      transform45, msg->header.stamp, selfstr, string("/vision")));
-    broadcaster->sendTransform(tf::StampedTransform(
-      transform90, msg->header.stamp, selfstr, string("/height")));
+      transform, msg->header.stamp, target_frame, selfstr));
+    //    broadcaster->sendTransform(tf::StampedTransform(
+    //      transform45, msg->header.stamp, selfstr, string("/laser")));
+    //    broadcaster->sendTransform(tf::StampedTransform(
+    //      transform45, msg->header.stamp, selfstr, string("/vision")));
+    //    broadcaster->sendTransform(tf::StampedTransform(
+    //      transform90, msg->header.stamp, selfstr, string("/height")));
   }
 
   if (tfc && (target_frame != baseFrame))
