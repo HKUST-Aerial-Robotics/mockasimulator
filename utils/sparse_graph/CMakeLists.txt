@@ -15,10 +15,3 @@ include_directories(
     ${catkin_INCLUDE_DIRS}
     include
     )
-
-macro (CMAKE_ADD_TEST NAME)
-   add_executable(${NAME}_test test/${NAME}_test.cpp)
-   target_link_libraries(${NAME}_test gtest ${GSL_LIBRARIES} ${PROJECT_NAME})
-   add_test(NAME ${NAME}_test
-            COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${NAME}_test)
-endmacro (CMAKE_ADD_TEST)
