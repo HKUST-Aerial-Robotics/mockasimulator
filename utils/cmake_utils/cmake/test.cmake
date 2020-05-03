@@ -10,3 +10,9 @@ macro (CMAKE_ADD_TEST NAME)
    endif()
 endmacro (CMAKE_ADD_TEST)
 
+macro (CMAKE_ADD_NODE NAME)
+   add_executable(${NAME}_node node/${NAME}_node.cpp)
+   add_dependencies(${NAME}_node ${catkin_EXPORTED_TARGETS})
+   target_link_libraries(${NAME}_node ${catkin_LIBRARIES} ${PROJECT_NAME} ${${NAME}__LIBRARIES})
+endmacro (CMAKE_ADD_NODE NAME)
+
